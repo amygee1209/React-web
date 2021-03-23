@@ -16,10 +16,14 @@ function Count() {
     setCount(prevCount => prevCount * 2)
   }
 
+  useEffect(() => {
+    setColor(randomcolor())
+  }, [count])
+
   return (
     <div>
       <div className="counter">
-        <h1>{count}</h1>
+        <h1 style={{color: color}}>{count}</h1>
         <button onClick={countUp}>Count up!</button>
         <button onClick={countDown}>Count Down!</button>
         <button onClick={countDouble}>x2</button>

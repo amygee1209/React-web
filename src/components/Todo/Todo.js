@@ -1,20 +1,24 @@
 import './Todo.css';
 import TodoItem from './TodoItem';
 import TodoDB from './TodoDB';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-class Todo extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      todos: TodoDB
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
+function Todo() {
+  const [count, setCount] = useState(60)
+  const [todos, setTodos] = useState(TodoDB)
+  
+  useEffect(() => {
+    if (count === 0) return
     
-  handleChange(id) {
-    this.setState(prevState => {
-      const updatedTodos = prevState.todos.map(todo => {
+    const intervalId = setInterval(() => {
+      setCount(count - 1)
+    }, 1000)
+    return () => clearInterval(intervalId);
+  }, [count])
+
+  function handleChange(id) {
+    setTodos(prevTodos => {
+      const updatedTodos = prevTodos.map(todo => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -29,15 +33,16 @@ class Todo extends React.Component {
     })
   }
   
-  render() {
-    const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
+  const todoItems = todos.map(item => <TodoItem key={item.id} item={item} handleChange={handleChange}/>)
     
-    return (
+  return (
+    <div>
+      <h3>You have {count} seconds left</h3>
       <div className="todo-list">
         {todoItems}
       </div>
-    )    
-  }
+    </div>
+  )
 }
 
 export default Todo;
