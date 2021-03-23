@@ -1,0 +1,32 @@
+#text-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#meme-content {
+  margin: 20px 5px 15px;
+  position: relative;
+
+}
+#meme-content h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 3vh;
+  font-family: impact, sans-serif;
+  word-wrap: normal;
+  letter-spacing: 0.5px;
+  color: white;
+  text-shadow:
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+#meme-content .top-text {
+  top: 5px;
+
+}
+#meme-content .bottom-text {
+  bottom: 5px;
+}
