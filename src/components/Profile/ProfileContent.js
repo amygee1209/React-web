@@ -1,5 +1,6 @@
+import './ProfileContent.css';
 
-const ProfileContent = ({data, handleChange, handleLogInOut}) => {
+export default function ProfileContent({data, handleChange, handleLogInOut}) {
   let [month, date, year] = data.currDate.toLocaleDateString("en-US").split("/")
   let [hour, minute] = data.currDate.toLocaleTimeString("en-US").split(/:| /)
 
@@ -8,9 +9,6 @@ const ProfileContent = ({data, handleChange, handleLogInOut}) => {
   if (true) {
     styles.color = "#FF0000"
   }
-
-  let logInOut = data.isLoggedIn ? "in" : "out";
-  let buttonText = data.isLoggedIn ? "OUT" : "IN";
 
   return (
     <div>
@@ -41,10 +39,6 @@ const ProfileContent = ({data, handleChange, handleLogInOut}) => {
         <p>
           and it is currently {`${hour}:${minute}`}
         </p>
-        <h4>
-          You are  currently logged {logInOut} 
-        </h4>
-        <button onClick={handleLogInOut}>LOG {buttonText}</button>
         {
           data.unreadMessages.length > 0 && 
           <h4>You have {data.unreadMessages.length} unread messages!</h4>
@@ -108,5 +102,3 @@ const ProfileContent = ({data, handleChange, handleLogInOut}) => {
     </div>
   )
 }
-
-export default ProfileContent

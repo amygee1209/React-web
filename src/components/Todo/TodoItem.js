@@ -1,7 +1,7 @@
 import './Todo.css';
 
 
-function TodoItem(props) {
+export default function TodoItem({item, handleChange}) {
   const completedStyle = {
     fontStyle: "italic",
     color: "#cdcdcd",
@@ -12,12 +12,10 @@ function TodoItem(props) {
     <div className="todo-item">
       <input
         type="checkbox" 
-        checked={props.item.completed} 
-        onChange={() => props.handleChange(props.item.id)}
+        checked={item.completed} 
+        onChange={() => handleChange(item.id)}
       />
-      <p style={props.item.completed ? completedStyle : null}>{props.item.text}</p>
+      <p style={item.completed ? completedStyle : null}>{item.text}</p>
     </div>
   )
 }
-
-export default TodoItem;

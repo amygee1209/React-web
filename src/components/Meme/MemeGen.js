@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './MemeGen.css';
 
-class MemeGen extends Component {
+export default class MemeGen extends Component {
   constructor() {
     super()
     this.state = {
@@ -92,5 +92,3 @@ class MemeGen extends Component {
     )
   }
 }
-
-export default MemeGen

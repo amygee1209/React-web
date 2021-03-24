@@ -1,0 +1,21 @@
+.none {
+  display: none;
+}
+.drop-down-content {  
+  position: absolute;
+  top: 60px; 
+  right: 15%; 
+  margin: auto;  
+  border-radius: 2px;  
+  background: rgb(85, 88, 228); 
+  border: none;
+  padding: 5px;
+}
+.drop-down-content ul {
+  padding: 0;
+  text-align: center;
+}
+.drop-down-content li {
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,42 @@
+.navbar {
+  background-color: rgb(188, 223, 143);
+  margin: 0 0 5vh;
+}
+.navbar ul {
+  list-style:none;
+}
+.row-space-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-left {
+  padding: 0;
+  width: 40%;
+  justify-content: space-between;
+}
+.nav-right {
+  width: 15%;
+  justify-content: flex-end;
+}
+.navbar-item {
+  padding: 15px 15px 15px 0;
+  text-decoration: none;
+}
+.profile-box {
+  padding: 5px 8px;
+  border-radius: 10px;
+  background:red;
+}
+.profile-item {
+  text-decoration: none;
+}
+.navbar-item:hover {
+  cursor: pointer;
+  color: white;
+}
+.profile-item:hover{
+  cursor: pointer;
+  color: white;
+}

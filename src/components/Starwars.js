@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class StarWars extends Component {
+export default class StarWars extends Component {
   constructor() {
     super()
     this.state = {
@@ -33,5 +33,3 @@ class StarWars extends Component {
     )
   }
 }
-
-export default StarWars

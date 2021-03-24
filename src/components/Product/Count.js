@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Product.css'
 import randomcolor from "randomcolor"
 
-function Count() {
+export default function Count() {
   const [count, setCount] = useState(0)
   const [color, setColor] = useState("")
 
@@ -31,5 +31,3 @@ function Count() {
     </div>
   )
 }
-
-export default Count;

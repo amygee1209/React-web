@@ -2,14 +2,13 @@ import React, {Component} from "react";
 import CitiesDB from './CitiesDB';
 import ProfileContent from './ProfileContent';
 
-class Profile extends Component {
+export default class Profile extends Component {
   constructor() {
     super()
     this.state = {
       firstName: "",
       lastName: "",
       currDate: new Date(),
-      isLoggedIn: false,
       unreadMessages: ["Haha"],
       textContent: "",
       finishWrite: false,
@@ -36,14 +35,6 @@ class Profile extends Component {
         : this.setState({ [name]: value })
     }
   }
-  
-  handleLogInOut = () => {
-    this.setState(prevState => {
-      return {
-       isLoggedIn: !prevState.isLoggedIn
-      }
-    })
-  }
 
   render() {
     return (
@@ -57,5 +48,3 @@ class Profile extends Component {
     )
   }
 }
-
-export default Profile;

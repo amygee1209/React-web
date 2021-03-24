@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ProductDB from './ProductDB';
 import Count from './Count';
 
-function Product() {
+export default function Product() {
   const [products] = useState(ProductDB)
   const productItems = products.map(item => 
     (
@@ -27,5 +27,3 @@ function Product() {
     </div>
   )
 }
-
-export default Product;
